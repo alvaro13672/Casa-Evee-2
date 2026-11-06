@@ -1,0 +1,131 @@
+/* ===== 1. VARIABLES (paleta tomada de la referencia) ===== */
+:root {
+  --noche: #1b1c2b;
+  --tinta: #22233a;
+  --gris: #6b6d80;
+  --linea: #e4e4ee;
+  --fondo: #f6f6fb;
+  --blanco: #fff;
+  --magenta: #c13cf0;
+  --turquesa: #35d5b5;
+  --degradado: linear-gradient(90deg, var(--magenta), var(--turquesa));
+  --verde: #22c55e;
+  --radio: 14px;
+  --fuente: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ===== 2. BASE ===== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body { margin: 0; font-family: var(--fuente); color: var(--tinta); background: var(--fondo); line-height: 1.6; }
+h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 .6rem; }
+p { margin: 0 0 .8rem; }
+ul, ol { margin: 0; padding-left: 1.2rem; }
+li { margin-bottom: .35rem; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--magenta); outline-offset: 2px; }
+.contenedor { width: min(1180px, 92%); margin: 0 auto; }
+
+/* ===== 3. BARRA SUPERIOR Y ENCABEZADO ===== */
+.barra-superior { background: var(--noche); color: #d9d9e6; font-size: .78rem; }
+.barra-superior .contenedor { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; }
+.encabezado { background: var(--blanco); border-bottom: 1px solid var(--linea); position: sticky; top: 0; z-index: 10; }
+.encabezado-fila { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 0; }
+.marca { display: flex; align-items: center; gap: .6rem; text-decoration: none; font-weight: 700; }
+.marca-logo { display: grid; place-items: center; width: 42px; height: 34px; border-radius: 10px; background: var(--degradado); color: #fff; font-weight: 800; font-size: .95rem; }
+.marca small { display: block; font-weight: 400; color: var(--gris); font-size: .72rem; }
+.menu ul { display: flex; flex-wrap: wrap; gap: .3rem; list-style: none; padding: 0; margin: 0; }
+.menu a { display: block; padding: .4rem .85rem; border-radius: 999px; text-decoration: none; font-size: .88rem; font-weight: 500; }
+.menu a:hover { background: var(--fondo); color: var(--magenta); }
+
+/* ===== 4. PORTADA (HERO) ===== */
+.portada { background: radial-gradient(circle at 85% 20%, #ffe9a8 0, transparent 28%), linear-gradient(120deg, #f7e4ff, #e3f7f3 60%, #fff3da); padding: 3rem 0; }
+.portada-fila { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; align-items: center; }
+.etiqueta { display: inline-block; background: #ecd5fb; color: #7b1ba0; font-size: .72rem; font-weight: 600; padding: .2rem .7rem; border-radius: 999px; margin-bottom: 1rem; }
+.portada h1 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; }
+.texto-degradado { background: var(--degradado); -webkit-background-clip: text; background-clip: text; color: transparent; display: block; }
+.portada p { color: var(--gris); max-width: 46ch; }
+.boton { display: inline-block; background: var(--degradado); color: #fff; font-weight: 600; text-decoration: none; padding: .7rem 1.5rem; border-radius: 10px; margin-top: .6rem; }
+.boton:hover { filter: brightness(1.07); }
+.boton:focus-visible { outline: 3px solid var(--noche); outline-offset: 3px; }
+.portada-tarjeta { background: rgba(255, 255, 255, .8); border-radius: 22px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(60, 40, 110, .12); }
+.portada-tarjeta h2 { font-size: 1.05rem; }
+.portada-tarjeta li { font-size: .9rem; }
+
+/* ===== 5. INDICADORES (estilo panel de la referencia) ===== */
+.indicadores { display: grid; grid-template-columns: repeat(6, 1fr); gap: .8rem; margin-top: -1.6rem; position: relative; }
+.indicador { background: var(--blanco); border: 1px solid var(--linea); border-radius: 12px; padding: .8rem 1rem; }
+.indicador span { display: block; font-size: .68rem; color: var(--gris); }
+.indicador strong { font-size: 1.8rem; line-height: 1.1; }
+.indicador:nth-child(even) strong { color: var(--magenta); }
+
+/* ===== 6. SECCIONES Y TARJETAS ===== */
+.seccion { padding: 3rem 0 .5rem; }
+.seccion-titulo p { color: var(--gris); max-width: 70ch; }
+.seccion h2 { font-size: 1.7rem; }
+.rejilla { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); margin: 1.2rem 0; }
+.tarjeta { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); padding: 1.2rem; }
+.tarjeta h3 { font-size: 1.05rem; }
+.tarjeta-oscura { background: var(--noche); color: #e9e9f4; border: 0; }
+.tarjeta-oscura h3 { color: #fff; }
+.nota { background: #fff8e1; border-left: 4px solid #f5b301; border-radius: 8px; padding: .8rem 1rem; font-size: .88rem; margin: 1rem 0; }
+
+/* ===== 7. TABLAS ===== */
+.tabla-contenedor { overflow-x: auto; background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); margin: 1rem 0; }
+table { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 560px; }
+th, td { text-align: left; padding: .65rem .9rem; border-bottom: 1px solid var(--linea); vertical-align: top; }
+th { background: var(--noche); color: #fff; font-weight: 600; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 600; }
+.prio { display: inline-block; padding: .1rem .6rem; border-radius: 999px; font-size: .75rem; font-weight: 600; background: #e5f7f1; color: #0b7a62; }
+.prio-alta { background: #fde4ee; color: #a3194f; }
+.prio-media { background: #fff1d6; color: #8a5a00; }
+
+/* ===== 8. POLÍTICAS ===== */
+.indice-politicas { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: .8rem; list-style: none; padding: 0; margin: 1.2rem 0; counter-reset: pol; }
+.indice-politicas a { display: block; background: var(--blanco); border: 1px solid var(--linea); border-radius: 12px; padding: .8rem 1rem; text-decoration: none; font-size: .88rem; font-weight: 500; }
+.indice-politicas a:hover { border-color: var(--magenta); }
+.indice-politicas b { display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 8px; background: var(--degradado); color: #fff; margin-right: .5rem; }
+.politica { background: var(--blanco); border: 1px solid var(--linea); border-radius: 18px; padding: 1.6rem; margin-bottom: 1.4rem; }
+.politica > header { border-bottom: 1px solid var(--linea); margin-bottom: 1rem; padding-bottom: .6rem; }
+.politica > header span { font-size: .78rem; font-weight: 600; color: var(--magenta); }
+.politica h3 { font-size: 1.35rem; margin: 0; }
+.politica-datos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+.politica-datos > div { background: var(--fondo); border-radius: 12px; padding: 1rem; }
+.politica-datos .ancho { grid-column: 1 / -1; }
+.politica h4 { font-size: .92rem; color: #7b1ba0; }
+.politica li, .politica p { font-size: .9rem; }
+
+/* ===== 9. PLAN ===== */
+.hito { display: grid; grid-template-columns: 170px 1fr; gap: 1rem; background: var(--blanco); border: 1px solid var(--linea); border-radius: 12px; padding: 1rem; margin-bottom: .7rem; }
+.hito h3 { font-size: .98rem; margin: 0; }
+.hito p { margin: 0; font-size: .88rem; }
+
+/* ===== 10. PIE DE PÁGINA ===== */
+.pie { background: var(--noche); color: #c9c9da; margin-top: 3.5rem; padding: 2.2rem 0 1rem; font-size: .85rem; }
+.pie-fila { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 1.5rem; }
+.pie h2 { font-size: .95rem; color: #fff; }
+.pie ul { list-style: none; padding: 0; }
+.pie a { text-decoration: none; }
+.pie a:hover { color: var(--turquesa); }
+.pie-final { border-top: 1px solid #36374d; margin-top: 1.5rem; padding-top: .8rem; font-size: .75rem; color: #9a9ab0; }
+
+/* Círculo verde fijo de la referencia: aquí vuelve al inicio */
+.subir { position: fixed; right: 1.2rem; bottom: 1.2rem; width: 52px; height: 52px; border-radius: 50%; background: var(--verde); color: #fff; display: grid; place-items: center; font-size: 1.4rem; text-decoration: none; box-shadow: 0 6px 16px rgba(34, 197, 94, .4); z-index: 20; }
+
+/* ===== 11. RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .portada-fila { grid-template-columns: 1fr; }
+  .indicadores { grid-template-columns: repeat(3, 1fr); }
+  .pie-fila { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .barra-superior .contenedor { flex-direction: column; gap: 0; }
+  .encabezado { position: static; }
+  .encabezado-fila { flex-direction: column; align-items: flex-start; }
+  .indicadores { grid-template-columns: repeat(2, 1fr); }
+  .hito { grid-template-columns: 1fr; }
+  .pie-fila { grid-template-columns: 1fr; }
+  .politica { padding: 1.1rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
