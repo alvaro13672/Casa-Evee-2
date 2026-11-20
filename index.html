@@ -248,187 +248,229 @@
 
       <!-- Política 2 -->
       <article class="politica" id="politica-2">
-        <header><span>Política 2</span><h3>Protección de datos, privacidad y confidencialidad</h3></header>
+        <header><span>Política 2</span><h3>Protección de datos, privacidad, conservación y derechos (Ley 25.326)</h3></header>
         <div class="politica-datos">
-          <div><h4>Objetivo</h4><p>Proteger datos personales y comerciales frente a acceso, divulgación, pérdida o uso no autorizado.</p></div>
-          <div><h4>Alcance</h4><p>Base de datos, formularios, cuentas, pedidos, registros de ventas, archivos de impresión, copias de seguridad y servicios externos.</p></div>
-          <div><h4>Responsables</h4><p>El dueño define qué datos necesita y para qué; el administrador técnico aplica los controles; empleados y proveedores mantienen la confidencialidad.</p></div>
+          <div><h4>Objetivo</h4><p>Proteger datos personales y comerciales frente a acceso, divulgación, pérdida o uso no autorizado, y fijar cuánto tiempo se conservan.</p></div>
+          <div><h4>Alcance</h4><p>Base de datos, formularios, cuentas, pedidos, ventas, archivos de impresión, copias de seguridad, WhatsApp y servicios externos.</p></div>
+          <div><h4>Responsables</h4><p>El dueño es responsable de la base de datos y atiende los pedidos de los titulares; el administrador técnico aplica los controles y los borrados; empleados y proveedores guardan confidencialidad.</p></div>
           <div class="ancho"><h4>Reglas</h4>
             <ul>
-              <li>Se piden solo los datos necesarios. Un pedido puede requerir nombre, apellido, contacto, dirección o ubicación y forma de pago, según la entrega.</li>
-              <li>El sitio informa qué datos recoge, para qué, quién los trata y cómo ejercer los derechos según la normativa aplicable.</li>
-              <li>Cada cliente ve solo sus propios datos, carrito, favoritos y pedidos (si la función está habilitada).</li>
-              <li>Los datos personales no se copian a cuentas personales, dispositivos no autorizados ni repositorios públicos.</li>
-              <li>Las credenciales de MySQL, Cloudinary y otros servicios no se envían al navegador ni se publican en Git.</li>
-              <li>Los archivos de impresión se usan solo para el trabajo pedido y se eliminan cuando ya no hacen falta, según el plazo que fije el comercio.</li>
-              <li>No se piden datos de tarjetas en formularios propios si el sistema no está preparado y autorizado para procesarlos.</li>
+              <li>Se piden solo los datos necesarios para el pedido. El sitio informa qué datos recoge, para qué, quién los trata y cómo ejercer los derechos; el registro requiere consentimiento informado.</li>
+              <li>Cada cliente ve solo sus propios datos, carrito, favoritos y pedidos.</li>
+              <li>Los datos personales no se copian a cuentas o dispositivos personales ni a repositorios.</li>
+              <li>No se piden datos de tarjeta en formularios propios.</li>
+              <li>La base de datos se registra ante la Agencia de Acceso a la Información Pública (AAIP), según corresponda.</li>
+            </ul>
+            <h4>Plazos de conservación</h4>
+            <div class="tabla-contenedor">
+              <table>
+                <thead><tr><th>Dato</th><th>Plazo propuesto</th><th>Qué ocurre después</th></tr></thead>
+                <tbody>
+                  <tr><td>Archivos enviados para imprimir</td><td>Hasta 7 días después de entregado el pedido (máximo 30 días si el pedido no se concreta)</td><td>Borrado seguro del servidor, de Cloudinary si se usó, y de chats o descargas locales; se anota en el registro de borrados</td></tr>
+                  <tr><td>Datos de contacto y entrega de un pedido</td><td>Hasta 6 meses después de entregado, para reclamos y garantía</td><td>Se eliminan o se separan de la venta, dejando solo lo exigido por registros contables</td></tr>
+                  <tr><td>Registros de ventas y comprobantes</td><td>10 años, por obligación contable y fiscal</td><td>Se archivan con acceso restringido</td></tr>
+                  <tr><td>Cuenta de cliente</td><td>Mientras esté activa; se avisa y se elimina tras 24 meses sin uso</td><td>Baja de cuenta, carrito y favoritos</td></tr>
+                  <tr><td>Registros de actividad (logs)</td><td>12 meses</td><td>Eliminación automática o manual</td></tr>
+                  <tr><td>Copias de seguridad</td><td>30 días de rotación</td><td>Una copia vieja se destruye; los borrados pedidos por titulares salen de las copias al rotar</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="nota">Los plazos son una propuesta académica. El comercio los confirma y los ajusta a la normativa vigente y al asesoramiento legal que reciba.</p>
+            <h4>Derechos de los titulares</h4>
+            <ul>
+              <li><strong>Acceso:</strong> el cliente pide por correo o WhatsApp oficial qué datos tiene el comercio sobre él. Se verifica su identidad y se responde dentro de 10 días corridos. Es gratuito a intervalos no menores de seis meses.</li>
+              <li><strong>Rectificación y supresión:</strong> se resuelven dentro de 5 días hábiles; si no se puede borrar algo por obligación legal (ventas), se explica el motivo.</li>
+              <li>Cada pedido se registra: fecha, derecho ejercido, quién lo resolvió y resultado. Si el titular no queda conforme, puede acudir a la AAIP.</li>
+              <li>El sitio publica un canal de contacto de privacidad.</li>
             </ul>
           </div>
           <div><h4>Controles</h4>
             <ul>
-              <li>Confirmar que cada dato solicitado tenga una finalidad definida.</li>
-              <li>Verificar permisos de lectura y modificación por usuario y rol.</li>
-              <li>Comprobar que los secretos estén fuera del código público y del repositorio.</li>
-              <li>Revisar periódicamente quién accede a datos y archivos internos.</li>
+              <li>Cada dato pedido tiene una finalidad anotada.</li>
+              <li>Cada mes se revisan los archivos y pedidos vencidos y se borran.</li>
+              <li>Registro de borrados y de derechos ejercidos.</li>
+              <li>Se prueba que un cliente no vea datos de otro.</li>
             </ul>
           </div>
           <div><h4>Procedimiento ante incumplimiento</h4>
             <ol>
-              <li>Ante una exposición, restringir el acceso, preservar información para investigar y avisar al responsable.</li>
-              <li>Identificar qué datos se expusieron, a quiénes pudo afectar y la causa.</li>
-              <li>Corregir permisos, retirar publicaciones indebidas y evaluar las comunicaciones que correspondan.</li>
+              <li>Restringir el acceso y preservar evidencia.</li>
+              <li>Identificar qué datos se expusieron y a quiénes afecta.</li>
+              <li>Corregir permisos, borrar lo expuesto y avisar a los afectados.</li>
+              <li>Si se incumplió un plazo, borrar de inmediato y dejar constancia.</li>
             </ol>
           </div>
-          <div><h4>Mecanismo de revisión</h4><p>Cada seis meses, al incorporar nuevos datos o proveedores y después de un incidente de privacidad.</p></div>
+          <div><h4>Mecanismo de revisión</h4><p>Cada seis meses, al sumar datos o proveedores y tras un incidente de privacidad.</p></div>
         </div>
       </article>
 
       <!-- Política 3 -->
       <article class="politica" id="politica-3">
-        <header><span>Política 3</span><h3>Desarrollo seguro y protección de la aplicación web</h3></header>
+        <header><span>Política 3</span><h3>Desarrollo seguro y subida de archivos para imprimir</h3></header>
         <div class="politica-datos">
-          <div><h4>Objetivo</h4><p>Reducir vulnerabilidades para que entradas maliciosas, errores o configuraciones inseguras no comprometan datos ni funcionamiento.</p></div>
-          <div><h4>Alcance</h4><p>Código PHP, HTML, CSS y JavaScript, formularios, consultas MySQL, sesiones, panel administrativo, endpoints, carga de imágenes y servicios externos.</p></div>
-          <div><h4>Responsables</h4><p>El equipo de desarrollo implementa; quien revisa o despliega comprueba las pruebas; el dueño autoriza la puesta en producción.</p></div>
-          <div class="ancho"><h4>Reglas</h4>
+          <div><h4>Objetivo</h4><p>Reducir vulnerabilidades para que entradas maliciosas, archivos peligrosos o errores de configuración no comprometan datos ni funcionamiento.</p></div>
+          <div><h4>Alcance</h4><p>Código PHP, HTML, CSS y JavaScript, formularios, consultas MySQL, sesiones, panel, endpoints y carga de archivos e imágenes.</p></div>
+          <div><h4>Responsables</h4><p>Desarrollo implementa y prueba; quien despliega revisa la lista de verificación; el dueño autoriza la puesta en producción.</p></div>
+          <div class="ancho"><h4>Reglas generales</h4>
             <ul>
-              <li>Consultas a MySQL con PDO y consultas preparadas; nunca se concatenan valores del usuario en el SQL.</li>
-              <li>Los datos se validan en el servidor (tipo, formato, longitud y valores permitidos); la validación en JavaScript es solo ayuda de interfaz.</li>
-              <li>Lo que se muestra en HTML se escapa según el contexto para reducir el riesgo de XSS.</li>
-              <li>Las operaciones que modifican datos comprueban sesión, rol, permisos y método; las acciones sensibles llevan protección CSRF.</li>
-              <li>La carga de imágenes comprueba tipo, tamaño y extensión, genera nombres seguros y evita ejecutar archivos subidos.</li>
-              <li>HTTPS en producción y sin mostrar errores técnicos, rutas internas, consultas SQL ni secretos.</li>
-              <li>Los cambios se prueban en un entorno controlado; las pruebas de seguridad se hacen sobre sistemas propios o con autorización.</li>
-              <li>Las credenciales de servicios externos se usan solo del lado del servidor y con permisos limitados.</li>
+              <li>Toda entrada se valida en el servidor; las consultas usan PDO con sentencias preparadas.</li>
+              <li>La salida HTML se escapa (<code>htmlspecialchars</code>) y los formularios que cambian datos llevan token CSRF y verifican método y rol.</li>
+              <li>Los errores técnicos no se muestran al usuario; se guardan en un registro.</li>
+              <li>Se usa HTTPS y se mantienen actualizados PHP, el alojamiento y las dependencias.</li>
+            </ul>
+            <h4>Subida de archivos para imprimir</h4>
+            <ul>
+              <li><strong>Tipo real:</strong> solo PDF, JPG y PNG (otros formatos se evalúan caso por caso). Se verifica el contenido real con <code>finfo</code>/MIME y no solo la extensión.</li>
+              <li><strong>Tamaño:</strong> límite por archivo (por ejemplo 10 MB) y cantidad por pedido, configurado en PHP y comprobado en el servidor.</li>
+              <li><strong>Nombre:</strong> se reemplaza por uno aleatorio generado por el servidor; se ignoran el nombre y la ruta enviados por el usuario.</li>
+              <li><strong>Sin ejecución:</strong> los archivos se guardan fuera de la carpeta pública o en una carpeta donde no se ejecuta código (sin intérpretes PHP) y con permisos mínimos.</li>
+              <li><strong>Sin acceso directo por URL:</strong> no existe un enlace público adivinable. Se descargan mediante un script que comprueba sesión y rol (cliente propietario o personal autorizado) o con enlaces temporales firmados.</li>
+              <li><strong>Datos innecesarios:</strong> el formulario advierte que no deben subirse documentos personales, DNI, datos bancarios o información que no sea la que se imprime. Si se detectan, se avisa al cliente y se borran.</li>
+              <li><strong>Análisis:</strong> se usa antivirus del alojamiento o un escáner si está disponible; los archivos rechazados no se guardan.</li>
+              <li>Las imágenes de Cloudinary son solo las del catálogo; los archivos de clientes no se publican en ese servicio salvo en modo privado y con borrado según la política 2.</li>
             </ul>
           </div>
           <div><h4>Controles</h4>
             <ul>
-              <li>Revisar el código de acceso a datos para detectar consultas inseguras.</li>
-              <li>Probar entradas inválidas y casos límite.</li>
-              <li>Pruebas controladas de SQL injection, XSS y CSRF sin afectar datos reales ni sistemas de terceros.</li>
-              <li>Verificar HTTPS, permisos de archivos, manejo de errores y rutas administrativas.</li>
-              <li>Revisar cambios en Git antes de integrarlos a la versión principal.</li>
+              <li>Pruebas con archivos falsos (ejecutable renombrado como PDF, archivos enormes).</li>
+              <li>Comprobar que la URL de un archivo ajeno no se abre sin sesión.</li>
+              <li>Revisión del código antes de publicar.</li>
             </ul>
           </div>
           <div><h4>Procedimiento ante incumplimiento</h4>
             <ol>
-              <li>Ante una vulnerabilidad explotable, restringir o deshabilitar temporalmente la función afectada.</li>
-              <li>Corregir código o configuración, probar la solución y revisar si hubo accesos o cambios indebidos.</li>
-              <li>Documentar la vulnerabilidad, su corrección y cómo evitar que se repita.</li>
+              <li>Si se sube un archivo peligroso, aislarlo, borrarlo y revisar el registro del servidor.</li>
+              <li>Corregir la validación y probar de nuevo antes de reactivar la carga.</li>
+              <li>Si hubo exposición de archivos, aplicar la política 6.</li>
             </ol>
           </div>
-          <div><h4>Mecanismo de revisión</h4><p>Antes de cada publicación importante, cada seis meses y al incorporar formularios, roles, servicios o dependencias nuevas.</p></div>
+          <div><h4>Mecanismo de revisión</h4><p>Cada seis meses, antes de cada versión nueva y tras un incidente.</p></div>
         </div>
       </article>
 
       <!-- Política 4 -->
       <article class="politica" id="politica-4">
-        <header><span>Política 4</span><h3>Integridad de productos, precios, ventas y stock</h3></header>
+        <header><span>Política 4</span><h3>Servicios externos, WhatsApp y manejo de secretos</h3></header>
         <div class="politica-datos">
-          <div><h4>Objetivo</h4><p>Mantener información comercial exacta y evitar cambios accidentales o no autorizados que afecten ventas, reposición y atención.</p></div>
-          <div><h4>Alcance</h4><p>Catálogo, categorías, tipos de productos, presentaciones, precios, stock, mostrador, ventas, remitos y futuras funciones de reposición.</p></div>
-          <div><h4>Responsables</h4><p>El dueño define las reglas comerciales; el personal autorizado registra operaciones; el responsable técnico implementa validaciones, permisos y controles de consistencia.</p></div>
-          <div class="ancho"><h4>Reglas</h4>
+          <div><h4>Objetivo</h4><p>Controlar qué información sale hacia terceros y proteger claves y credenciales.</p></div>
+          <div><h4>Alcance</h4><p>WhatsApp, Cloudinary, alojamiento, base de datos en la nube, Git y cualquier proveedor.</p></div>
+          <div><h4>Responsables</h4><p>El dueño aprueba cada proveedor; el administrador técnico configura, rota claves y revisa repositorios.</p></div>
+          <div class="ancho"><h4>Datos que viajan a terceros</h4>
+            <div class="tabla-contenedor">
+              <table>
+                <thead><tr><th>Servicio</th><th>Datos que recibe</th><th>Regla</th></tr></thead>
+                <tbody>
+                  <tr><td>WhatsApp</td><td>Contenido del pedido, nombre y teléfono</td><td>Solo datos del pedido. Nunca contraseñas, datos de tarjeta, DNI ni claves. Se usa una cuenta del comercio, no personal, y se evita mandar archivos con datos sensibles por ese canal.</td></tr>
+                  <tr><td>Cloudinary</td><td>Imágenes del catálogo</td><td>Sin datos de clientes. La clave secreta queda solo en el servidor.</td></tr>
+                  <tr><td>Hosting y base de datos</td><td>Toda la información del sistema</td><td>Acceso con doble verificación si existe; permisos mínimos y cuentas individuales.</td></tr>
+                  <tr><td>Git / GitHub</td><td>Código fuente</td><td>Sin claves ni datos reales en el repositorio.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h4>Reglas</h4>
             <ul>
-              <li>Cada producto tiene un identificador y datos coherentes con su categoría, tipo, presentación y modalidad de venta.</li>
-              <li>Solo usuarios autorizados dan de alta, modifican o desactivan productos, o cambian precios y stock.</li>
-              <li>Precio y stock se validan en el servidor; cuando sea posible se registra fecha, usuario y valor anterior y nuevo.</li>
-              <li>Cantidades, precios y descuentos deben ser válidos; no se aceptan valores negativos no permitidos.</li>
-              <li>Venta y descuento de stock son consistentes: si la operación falla, no queda una venta parcial ni un stock incorrecto.</li>
-              <li>La anulación de una venta está autorizada y restituye el stock de forma controlada, sin duplicaciones.</li>
-              <li>Cuando exista la función de alertas, los productos por agotarse se identifican con umbrales definidos por el comercio.</li>
-              <li>Precios y disponibilidad publicados se actualizan cuando el comercio confirma cambios.</li>
+              <li>WhatsApp y los mensajes comunes no tienen cifrado de extremo a extremo con control empresarial, por eso solo se envían datos mínimos del pedido. Lo sensible se pide por un canal protegido o en persona.</li>
+              <li>Las credenciales viven en variables de entorno o en un archivo de configuración fuera de la carpeta pública y listado en <code>.gitignore</code>.</li>
+              <li>Antes de cada publicación se revisa el repositorio y su historial buscando claves; si una clave se filtra, se rota de inmediato.</li>
+              <li>Se leen los términos de cada proveedor y se elige el que cumpla con protección de datos razonable.</li>
+              <li>Se revocan los accesos de proveedores cuando termina el servicio.</li>
             </ul>
           </div>
           <div><h4>Controles</h4>
             <ul>
-              <li>Comparar periódicamente muestras de productos, precios y cantidades con el inventario físico.</li>
-              <li>Probar ventas, anulaciones, descuentos y errores con datos de prueba.</li>
-              <li>Controlar que solo el rol autorizado acceda a funciones administrativas.</li>
-              <li>Revisar registros de operaciones críticas y resolver diferencias.</li>
+              <li>Inventario de proveedores y datos enviados.</li>
+              <li>Búsqueda de secretos en el repositorio antes de publicar.</li>
+              <li>Rotación de claves cada seis meses.</li>
             </ul>
           </div>
           <div><h4>Procedimiento ante incumplimiento</h4>
             <ol>
-              <li>Ante un precio o stock incorrecto, detener la operación si es necesario y corregir con autorización.</li>
-              <li>Ante una diferencia de inventario, hacer un conteo de comprobación y registrar el ajuste y su motivo.</li>
-              <li>Si se sospecha una modificación maliciosa, preservar registros, limitar el acceso y revisar las cuentas involucradas.</li>
+              <li>Clave expuesta: revocarla, generar una nueva y actualizar el servidor.</li>
+              <li>Revisar el uso indebido en los registros del proveedor.</li>
+              <li>Dato sensible enviado por WhatsApp: borrar el mensaje, avisar al cliente y registrar el hecho.</li>
             </ol>
           </div>
-          <div><h4>Mecanismo de revisión</h4><p>Cada seis meses, tras cambios en las reglas de venta y cuando se repitan diferencias entre el sistema y el inventario.</p></div>
+          <div><h4>Mecanismo de revisión</h4><p>Cada seis meses y al cambiar o sumar un proveedor.</p></div>
         </div>
       </article>
 
       <!-- Política 5 -->
       <article class="politica" id="politica-5">
-        <header><span>Política 5</span><h3>Copias de seguridad, disponibilidad y continuidad operativa</h3></header>
+        <header><span>Política 5</span><h3>Integridad de productos, precios y stock</h3></header>
         <div class="politica-datos">
-          <div><h4>Objetivo</h4><p>Reducir el impacto de fallas técnicas, errores humanos, ataques o pérdida de información y permitir recuperar el servicio.</p></div>
-          <div><h4>Alcance</h4><p>Base de datos, archivos esenciales, configuración, documentación y demás información necesaria para restaurar la aplicación.</p></div>
-          <div><h4>Responsables</h4><p>El dueño asigna la responsabilidad y autoriza recursos; el administrador técnico hace o supervisa copias y pruebas de restauración; el personal sigue el procedimiento alternativo.</p></div>
+          <div><h4>Objetivo</h4><p>Evitar cambios no autorizados o erróneos en productos, precios, ventas y stock.</p></div>
+          <div><h4>Alcance</h4><p>Panel administrativo, punto de venta, carga de productos, presentaciones y movimientos de stock.</p></div>
+          <div><h4>Responsables</h4><p>El dueño aprueba cambios de precios; los administradores cargan datos; el empleado de mostrador registra ventas.</p></div>
           <div class="ancho"><h4>Reglas</h4>
             <ul>
-              <li>Copias periódicas de la base de datos y de los archivos necesarios para recuperar el sistema.</li>
-              <li>Acceso restringido a las copias y protección frente a pérdida, robo o modificación no autorizada.</li>
-              <li>Copias separadas y, si es viable, estrategia 3-2-1: tres copias, en dos tipos de soporte, una fuera del entorno principal.</li>
-              <li>Las copias se verifican y la restauración se prueba periódicamente; una copia no es confiable hasta comprobar que se puede recuperar.</li>
-              <li>Los cambios importantes incluyen una forma de recuperar la versión y los datos si la actualización falla.</li>
-              <li>Sin Internet o sistema, se pueden registrar operaciones en un medio alternativo controlado y cargarlas después, verificando que no se dupliquen.</li>
-              <li>Las credenciales y claves para la recuperación se guardan de forma segura y solo accesibles a personas autorizadas.</li>
+              <li>Solo administradores autorizados modifican precios y productos; el mostrador no.</li>
+              <li>Cada cambio de precio o stock queda registrado con usuario, fecha, valor anterior y nuevo.</li>
+              <li>Las cargas masivas se prueban primero con pocos productos; el servidor valida precios y cantidades (no negativos ni vacíos).</li>
+              <li>El stock se descuenta en el servidor, nunca en el navegador, y los pedidos de WhatsApp se confirman antes de afectarlo.</li>
+              <li>Se revisa el catálogo cada semana para detectar precios o disponibilidad desactualizados.</li>
             </ul>
           </div>
           <div><h4>Controles</h4>
             <ul>
-              <li>Comprobar que las copias se completen y los archivos no estén dañados.</li>
-              <li>Hacer pruebas de restauración y documentar fecha, resultado y problemas.</li>
-              <li>Verificar que el procedimiento alternativo de ventas permita conciliar los registros después.</li>
+              <li>Revisión del registro de cambios.</li>
+              <li>Conteo físico periódico contra el stock del sistema.</li>
             </ul>
           </div>
           <div><h4>Procedimiento ante incumplimiento</h4>
             <ol>
-              <li>Ante una caída, determinar si afecta al sitio, a la base de datos o a la conexión y avisar al responsable.</li>
-              <li>Evitar cambios improvisados que agraven la pérdida de datos.</li>
-              <li>Restaurar desde una copia verificada o activar el procedimiento alternativo; luego comparar registros y documentar.</li>
+              <li>Detectado un error, pausar la venta del producto afectado.</li>
+              <li>Revertir con el registro o la copia de seguridad.</li>
+              <li>Informar al responsable y corregir la causa (permiso o proceso).</li>
             </ol>
           </div>
-          <div><h4>Mecanismo de revisión</h4><p>Cada seis meses y tras una falla importante, un cambio de alojamiento o una restauración. La frecuencia de copias depende de cuántos datos puede permitirse perder el comercio.</p></div>
+          <div><h4>Mecanismo de revisión</h4><p>Cada trimestre y tras un error grave de precios o stock.</p></div>
         </div>
       </article>
 
       <!-- Política 6 -->
       <article class="politica" id="politica-6">
-        <header><span>Política 6</span><h3>Gestión y respuesta ante incidentes de seguridad</h3></header>
+        <header><span>Política 6</span><h3>Copias de seguridad, continuidad y respuesta ante incidentes</h3></header>
         <div class="politica-datos">
-          <div><h4>Objetivo</h4><p>Un procedimiento ordenado para detectar, informar, contener, investigar y resolver incidentes que afecten la información o los servicios.</p></div>
-          <div><h4>Alcance</h4><p>Incidentes de cuentas, datos, código, equipos, servicios externos, red, ventas, stock, privacidad y disponibilidad.</p></div>
-          <div><h4>Responsables</h4><p>Todo usuario informa incidentes sospechosos; el dueño coordina las decisiones del negocio; el administrador técnico investiga y contiene, con apoyo especializado si hace falta.</p></div>
-          <div class="ancho"><h4>Reglas</h4>
+          <div><h4>Objetivo</h4><p>Recuperar el servicio y la información tras una falla o ataque, y responder con orden.</p></div>
+          <div><h4>Alcance</h4><p>Base de datos, código, imágenes, configuración y todos los incidentes de seguridad.</p></div>
+          <div><h4>Responsables</h4><p>El dueño decide y comunica; el administrador técnico investiga y recupera; todo el personal avisa de inmediato.</p></div>
+          <div class="ancho"><h4>Copias y continuidad</h4>
             <ul>
-              <li>Se informa de inmediato: accesos sospechosos, pérdida de dispositivos, mensajes fraudulentos, datos expuestos, errores inusuales o modificaciones no reconocidas.</li>
-              <li>No se borran registros ni se alteran evidencias, salvo para contener un daño inmediato.</li>
-              <li>Los incidentes se clasifican inicialmente como bajos, medios o altos según alcance, sensibilidad de los datos e impacto en el negocio.</li>
-              <li>Quienes no están autorizados no investigan por su cuenta ni difunden datos del incidente.</li>
-              <li>Se mantiene un registro con fecha, descripción, sistemas afectados, acciones, responsables y resultado.</li>
+              <li>Copia de la base de datos todos los días y del código en Git; las copias se guardan cifradas en un lugar distinto al servidor.</li>
+              <li>Cada tres meses se prueba restaurar una copia y se anota el resultado.</li>
+              <li>Si falla la web o Internet, se registran ventas y pedidos en una planilla o cuaderno de contingencia y se cargan después.</li>
+              <li>Meta de recuperación: sitio funcionando en 24 horas y pérdida máxima de un día de datos.</li>
             </ul>
+            <h4>Plan de respuesta ante incidentes</h4>
+            <div class="tabla-contenedor">
+              <table>
+                <thead><tr><th>Fase</th><th>Quién actúa</th><th>Qué se hace</th><th>Qué se registra</th></tr></thead>
+                <tbody>
+                  <tr><td>1. Detección y aviso</td><td>Quien lo nota</td><td>Avisa al administrador técnico y al dueño sin demora</td><td>Fecha, hora, qué vio</td></tr>
+                  <tr><td>2. Evaluación</td><td>Administrador técnico</td><td>Define tipo y gravedad (baja, media, alta)</td><td>Sistemas y datos afectados</td></tr>
+                  <tr><td>3. Contención</td><td>Administrador técnico</td><td>Bloquea cuentas, cambia claves, desconecta lo afectado</td><td>Acciones y horario</td></tr>
+                  <tr><td>4. Erradicación</td><td>Administrador técnico</td><td>Elimina la causa y cierra la vulnerabilidad</td><td>Causa raíz</td></tr>
+                  <tr><td>5. Recuperación</td><td>Administrador técnico, con aprobación del dueño</td><td>Restaura desde copia, prueba y reactiva el servicio</td><td>Copia usada, tiempo de recuperación</td></tr>
+                  <tr><td>6. Comunicación</td><td>Dueño</td><td>Avisa a clientes afectados y a proveedores si corresponde</td><td>A quién y cuándo</td></tr>
+                  <tr><td>7. Lecciones</td><td>Dueño y técnico</td><td>Revisan lo ocurrido y actualizan políticas</td><td>Informe final y mejoras</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
           <div><h4>Controles</h4>
             <ul>
-              <li>Revisar reportes de usuarios, registros disponibles y alertas de acceso.</li>
-              <li>Comprobar que exista una persona de contacto y un procedimiento conocido.</li>
-              <li>Hacer una revisión posterior para identificar causas y mejoras.</li>
+              <li>Prueba de restauración trimestral.</li>
+              <li>Lista de contactos de emergencia actualizada.</li>
+              <li>Simulacro anual de un incidente.</li>
             </ul>
           </div>
           <div><h4>Procedimiento ante incumplimiento</h4>
             <ol>
-              <li>Identificar y registrar el incidente; estimar alcance y gravedad.</li>
-              <li>Contenerlo: deshabilitar una cuenta comprometida, limitar una función vulnerable o aislar un equipo.</li>
-              <li>Preservar evidencias y corregir la causa (cambio de contraseñas, actualización de software).</li>
-              <li>Recuperar el servicio de forma controlada, verificar la integridad de los datos y comunicar a las personas pertinentes.</li>
-              <li>Documentar lecciones aprendidas y asignar acciones preventivas.</li>
+              <li>Si falta una copia o no restaura, se corrige y se repite la prueba en 7 días.</li>
+              <li>Si no se avisó un incidente a tiempo, se documenta y se refuerza la capacitación.</li>
             </ol>
           </div>
-          <div><h4>Mecanismo de revisión</h4><p>Después de cada incidente relevante, cada seis meses y cuando cambien los sistemas, los responsables o los servicios.</p></div>
+          <div><h4>Mecanismo de revisión</h4><p>Cada seis meses y después de cada incidente.</p></div>
         </div>
       </article>
     </div>
@@ -438,32 +480,25 @@
   <section class="seccion" id="plan">
     <div class="contenedor">
       <div class="seccion-titulo">
-        <h2>Plan de aplicación y prioridades</h2>
-        <p>Las políticas se aplican de forma progresiva. Credenciales, permisos, consultas seguras y protección de datos son requisitos previos a la publicación y al uso real del sistema.</p>
+        <h2>Plan de aplicación</h2>
+        <p>Orden sugerido para poner las políticas en marcha, con responsable y evidencia de cumplimiento.</p>
       </div>
-      <div class="hito"><h3><span class="prio prio-alta">Inmediata</span> antes de producción</h3><p>Confirmar HTTPS; secretos fuera del código público; verificar <code>password_hash</code>/<code>password_verify</code>; PDO con consultas preparadas; permisos por rol en el servidor; validar entradas y escapar salidas; proteger rutas administrativas.</p></div>
-      <div class="hito"><h3><span class="prio prio-alta">Alta</span></h3><p>Configurar copias de seguridad y probar la restauración; limitar intentos de acceso; revisar cookies y sesiones; documentar la respuesta a incidentes; revisar el acceso a datos de clientes.</p></div>
-      <div class="hito"><h3><span class="prio prio-media">Media</span></h3><p>Registros de operaciones administrativas; formalizar el procedimiento de contingencia; definir plazos de conservación de archivos de impresión y datos personales; establecer la revisión de inventario.</p></div>
-      <div class="hito"><h3><span class="prio">Etapas futuras</span></h3><p>Controles de stock y precios en el panel, registro completo de pedidos, alertas de bajo stock y otras funciones proyectadas, con validaciones y permisos desde el diseño.</p></div>
-
-      <h3>Cumplimiento y revisión general</h3>
-      <div class="rejilla">
-        <article class="tarjeta"><p>El dueño aprueba las políticas y promueve su cumplimiento. Quienes usan el sistema conocen las reglas que les corresponden y el responsable técnico mantiene evidencia razonable de revisiones y pruebas.</p></article>
-        <article class="tarjeta"><p>El conjunto se revisa como mínimo cada seis meses, y también ante funcionalidades importantes, cambio de alojamiento, nuevos servicios, nuevos tipos de datos o un incidente relevante. Cada revisión indica fecha, cambios y responsable.</p></article>
-        <article class="tarjeta"><p>Si una regla no puede cumplirse por limitaciones técnicas, no se omite en silencio: se documenta la limitación, el riesgo, una medida compensatoria y la fecha prevista para resolverla.</p></article>
-      </div>
+      <div class="hito"><h3>Semana 1–2</h3><p><strong>Accesos y secretos (políticas 1 y 4).</strong> Responsable: administrador técnico. Revisar contraseñas con <code>password_hash</code>, roles, cuentas compartidas y retirar claves de Git. Evidencia: lista de verificación firmada.</p></div>
+      <div class="hito"><h3>Semana 3–4</h3><p><strong>Desarrollo seguro y archivos (política 3).</strong> Responsable: desarrollo. Consultas preparadas, escape de salida, CSRF y controles de subida. Evidencia: pruebas con archivos falsos.</p></div>
+      <div class="hito"><h3>Mes 2</h3><p><strong>Datos y privacidad (política 2).</strong> Responsable: dueño. Redactar aviso de privacidad, plazos y canal para ejercer derechos; programar el borrado mensual. Evidencia: registro de borrados.</p></div>
+      <div class="hito"><h3>Mes 2–3</h3><p><strong>Stock y precios (política 5).</strong> Responsable: administradores. Activar el registro de cambios y el control semanal. Evidencia: informe del primer conteo.</p></div>
+      <div class="hito"><h3>Mes 3</h3><p><strong>Copias e incidentes (política 6).</strong> Responsable: administrador técnico y dueño. Configurar copias, probar una restauración y hacer un simulacro. Evidencia: acta de la prueba.</p></div>
+      <div class="hito"><h3>Cada 6 meses</h3><p><strong>Revisión general.</strong> Responsable: dueño. Actualizar el análisis de riesgos, los plazos y las políticas.</p></div>
     </div>
   </section>
 
-  <!-- ===== CONCLUSIÓN ===== -->
+  <!-- ===== CIERRE ===== -->
   <section class="seccion" id="cierre">
     <div class="contenedor">
-      <article class="tarjeta tarjeta-oscura">
+      <div class="seccion-titulo">
         <h2>Conclusión</h2>
-        <p>La aplicación web de Casa Evee mejora la consulta de productos y centraliza de a poco la gestión comercial, pero también concentra información y operaciones que requieren protección. Las seis políticas fijan reglas de acceso, privacidad, desarrollo seguro, integridad comercial, copias de seguridad y respuesta ante incidentes.</p>
-        <p>La seguridad no depende solo del código: también requiere permisos adecuados, hábitos responsables, recuperación comprobada y revisiones periódicas.</p>
-        <p class="nota" style="color:#22233a">Nota de alcance: es una propuesta académica. No constituye una auditoría técnica ni afirma que todas las medidas estén implementadas; antes de usar datos reales, los controles deben verificarse en el código y en producción.</p>
-      </article>
+        <p>Casa Evee pasa de planillas y chats a un sistema web, y con eso concentra datos de clientes, precios y ventas. Estas seis políticas fijan quién accede, cuánto tiempo se guardan los datos, cómo se protegen los archivos de impresión, qué viaja a terceros y cómo se recupera el servicio ante un problema. Su cumplimiento se verifica con pruebas y registros, y se revisa de forma periódica.</p>
+      </div>
     </div>
   </section>
 </main>
@@ -471,37 +506,12 @@
 <footer class="pie">
   <div class="contenedor">
     <div class="pie-fila">
-      <div>
-        <h2>Casa Evee</h2>
-        <p>Documento académico basado en el proyecto de aplicación web de comercialización desarrollado originalmente para Casa Esteban.</p>
-      </div>
-      <nav aria-label="Secciones">
-        <h2>Contenido</h2>
-        <ul>
-          <li><a href="#analisis">Análisis de seguridad</a></li>
-          <li><a href="#politicas">Políticas</a></li>
-          <li><a href="#plan">Plan de aplicación</a></li>
-          <li><a href="#cierre">Conclusión</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Políticas">
-        <h2>Políticas</h2>
-        <ul>
-          <li><a href="#politica-1">Identidades y acceso</a></li>
-          <li><a href="#politica-2">Datos y privacidad</a></li>
-          <li><a href="#politica-3">Desarrollo seguro</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="Más políticas">
-        <h2>Más políticas</h2>
-        <ul>
-          <li><a href="#politica-4">Integridad comercial</a></li>
-          <li><a href="#politica-5">Copias y continuidad</a></li>
-          <li><a href="#politica-6">Incidentes</a></li>
-        </ul>
-      </nav>
+      <div><h2>Casa Evee</h2><p>Política de seguridad informática. Documento académico.</p></div>
+      <div><h2>Secciones</h2><ul><li><a href="#analisis">Análisis</a></li><li><a href="#politicas">Políticas</a></li></ul></div>
+      <div><h2>Más</h2><ul><li><a href="#plan">Plan de aplicación</a></li><li><a href="#cierre">Conclusión</a></li></ul></div>
+      <div><h2>Documento</h2><p>Versión 1.1 · Noviembre de 2026</p></div>
     </div>
-    <p class="pie-final">Política de Seguridad Informática · Versión 1.0 · Octubre de 2026 · Tecnicatura Superior en Desarrollo de Software · Asignatura: Seguridad Informática</p>
+    <div class="pie-final">Tecnicatura Superior en Desarrollo de Software · Seguridad Informática</div>
   </div>
 </footer>
 
